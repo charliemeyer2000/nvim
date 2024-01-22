@@ -16,7 +16,7 @@ Because MacOs uses command for special commands, I use the control button. You c
 
 ## Searching
 
-You can just use the default searcher for searching for stuff, but I also have <leader> (which ihave mapped to the spacebanr) + G to do a live grep of all the files in the current directory.
+You can just use the default searcher for searching for stuff, but I also have <leader> (which i have mapped to the spacebanr) + G to do a live grep of all the files in the current directory.
 
 ## Window Management
 
@@ -45,4 +45,6 @@ here is a basic table for surrounding shit in normal mode thru nvim-surround:
 
 Also while in visual mode, just do S +  bracket/ parenthesis to surround shit.
 
+## Terminal
 
+Use cmd + t to toggle the terminal. It is the vim terminal so it takes a sec to boot up. 
