@@ -24,6 +24,3 @@ vim.cmd("set nohlsearch")
 -- set command + w to close buffer
 vim.cmd("nnoremap <silent> <C-w> :BufferClose<CR>")
 
--- set shift + j/k to highlight text while in normal or visual mode
--- vim.api.nvim_set_keymap("n", "<S-J>", ':execute "normal! 5zh"<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<S-K>", ':execute "normal! 5zl"<CR>', { noremap = true, silent = true })

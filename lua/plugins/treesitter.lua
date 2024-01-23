@@ -8,6 +8,7 @@ return {
           auto_install = true,
           highlight = { enable = true, disable = {"lua"} },
           indent = { enable = true },
+          ensure_installed = { "markdown", "markdown_inline"}
         })
       end
     }
