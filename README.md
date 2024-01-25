@@ -13,6 +13,7 @@ Because MacOs uses command for special commands, I use the control button. You c
 - Control + B: Toggle File Tree
 - Control + G: Toggle Git status tree
 - Control + W: Close current buffer (file)
+- Control + o: open most recently closed buffer
 
 ## Searching
 
