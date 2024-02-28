@@ -1,3 +1,4 @@
+-- vim latex plugin
 return {
     "lervag/vimtex",
     config = function()

@@ -1,3 +1,4 @@
+-- file finder, live grep
 return {
   {
     "nvim-telescope/telescope-ui-select.nvim",

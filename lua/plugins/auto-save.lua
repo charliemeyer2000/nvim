@@ -1,3 +1,4 @@
+-- auto save config
 return {
   {
     "Pocco81/auto-save.nvim",

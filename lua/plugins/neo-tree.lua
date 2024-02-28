@@ -1,3 +1,4 @@
+-- file system toggle and git status toggle
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",

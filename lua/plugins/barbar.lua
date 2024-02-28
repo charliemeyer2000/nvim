@@ -1,18 +1,19 @@
+-- adds the tabs to the top of the screen for easy navigation
 return {
-	"romgrk/barbar.nvim",
-	dependencies = {
-		"lewis6991/gitsigns.nvim",
-		"nvim-tree/nvim-web-devicons",
-	},
-	-- init = function() vim.g.barbar_auto_setup = false end,
-	config = function()
-		require("barbar").setup({
-			animation = false,
-			clickable = true,
-			no_name_title = "new_file.txt",
-		})
+    "romgrk/barbar.nvim",
+    dependencies = {
+        "lewis6991/gitsigns.nvim",
+        "nvim-tree/nvim-web-devicons",
+    },
+    -- init = function() vim.g.barbar_auto_setup = false end,
+    config = function()
+        require("barbar").setup({
+            animation = false,
+            clickable = true,
+            no_name_title = "new_file.txt",
+        })
 
-		-- add transparency to the floating file tabs
-		vim.cmd("hi BufferTabpageFill ctermbg=black")
-	end,
+        -- add transparency to the floating file tabs
+        vim.cmd("hi BufferTabpageFill ctermbg=black")
+    end,
 }

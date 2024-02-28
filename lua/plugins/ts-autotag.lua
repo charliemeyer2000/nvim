@@ -1,3 +1,4 @@
+-- autoclose for HTML/JSX tags
 return {
   'windwp/nvim-ts-autotag',
   config = function()

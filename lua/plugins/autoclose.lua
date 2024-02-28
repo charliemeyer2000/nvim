@@ -1,3 +1,4 @@
+-- auto closes brackets and quotes and stuff
 return {
     "m4xshen/autoclose.nvim",
     config = function()

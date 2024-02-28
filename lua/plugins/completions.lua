@@ -1,3 +1,4 @@
+-- this plugin is for autocompletion
 return {
 	{
 		"hrsh7th/cmp-nvim-lsp",

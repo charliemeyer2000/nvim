@@ -1,3 +1,4 @@
+-- allows you to surround text with symbols
 return {
 
 	"kylechui/nvim-surround",

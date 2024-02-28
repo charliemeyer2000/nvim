@@ -1,3 +1,4 @@
+-- live markdown preview in browser using localhost
 return {
 	-- install without yarn or npm
 	{

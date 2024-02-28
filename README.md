@@ -2,6 +2,7 @@
 
 This is my neovim config. This uses `lazy.nvim` to manage packages. This README Is mostly used to track the useful commands that I have created/found for the specific plugins + also just generally useful motions as a whole.
 
+
 ## Lazy.nvim 
 
 To use lazy.nvim, just type `:Lazy`to ensure that everything's good to go.
@@ -31,9 +32,9 @@ set -g prefix C-a
 unbind-key C-b
 unbind-key C-a
 
-bind-key - split-window -c "#{pane_current_path}"
-bind-key v split-window -h -c "#{pane_current_path}"
-bind-key c new-window -c "#{pane_current_path}"
+bind-key - split-window -c "#pane_current_path"
+bind-key v split-window -h -c "#pane_current_path"
+bind-key c new-window -c "#pane_current_path"
 
 set-window-option -g mode-keys vi
 
@@ -79,4 +80,4 @@ Also while in visual mode, just do S +  bracket/ parenthesis to surround shit.
 
 ## Terminal
 
-Use cmd + t to toggle the terminal. It is the vim terminal so it takes a sec to boot up. 
+Use cmd + t to toggle the terminal. It is the vim terminal so it takes a sec to boot up. if you need more terminals, you should be using tmux to manage multiple terminals to run shit. 

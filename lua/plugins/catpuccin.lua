@@ -1,3 +1,4 @@
+-- theme for neovim + configuration for transparent background
 return {
 	{
 		"catppuccin/nvim",

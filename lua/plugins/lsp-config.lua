@@ -1,3 +1,4 @@
+-- config for LSP (aka like intellisense)
 return {
 	{
 		"williamboman/mason.nvim",
@@ -24,7 +25,7 @@ return {
 					python = {
 						analysis = {
 							autoSearchPaths = true,
-							typeCheckingMode = "basic",
+							typeCheckingMode = "off",
 							autoImportCompletion = true,
 							diagnosticMode = "workspace",
 							useLibraryCodeForTypes = true,
