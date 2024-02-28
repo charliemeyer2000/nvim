@@ -54,6 +54,21 @@ bind x kill-pane
 bind-key -n MouseDrag1Status swap-window -d -t=
 ```
 
+I also have this quick script that runs that i put at the top of my `.zshrc` file so that i don't really have to worry about sessions & panes and stuff with tmux. All it does is if a session exists, kill it, and start a new one. This makes it easier to not have to worry about session management, so you don't end up with just a ton of sessions.
+
+```
+# Run tmux commands only if not already in a tmux session
+if [[ -z "$TMUX" ]]; then
+    # Create a new session named '0' if it doesn't exist
+    tmux has-session -t 0 || tmux new-session -d -s 0
+
+    # Attach to the '0' session
+    tmux attach-session -t 0
+
+    # Set the 'destroy-unattached' option for the '0' session
+    tmux set-option -t 0 destroy-unattached
+fi
+```
 ## LSP/Autocomplete/IntelliSense
 
 - shift + k over something to see it's definition
