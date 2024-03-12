@@ -1,3 +1,6 @@
+![My Config Preview](preview.png)
+
+
 # Charlie's Nvim Config
 
 This is my neovim config. This uses `lazy.nvim` to manage packages. This README is mostly used to track the useful commands that I have created/found for the specific plugins + also just generally useful motions as a whole.
@@ -84,6 +87,7 @@ if [[ -z "$TMUX" ]]; then
     tmux set-option -t 0 destroy-unattached
 fi
 ```
+
 ## LSP/Autocomplete/IntelliSense
 
 - shift + k over something to see it's definition
