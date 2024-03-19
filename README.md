@@ -2,6 +2,8 @@
 
 
 # Charlie's Nvim Config
+fetch
+
 
 This is my neovim config. This uses `lazy.nvim` to manage packages. This README is mostly used to track the useful commands that I have created/found for the specific plugins + also just generally useful motions as a whole.
 
