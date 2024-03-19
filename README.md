@@ -2,8 +2,6 @@
 
 
 # Charlie's Nvim Config
-fetch
-
 
 This is my neovim config. This uses `lazy.nvim` to manage packages. This README is mostly used to track the useful commands that I have created/found for the specific plugins + also just generally useful motions as a whole.
 
@@ -23,9 +21,17 @@ This loads `neovim` and `tmux` modules so you can use them. Then, just create yo
 
 You can also style your terminal through adding themes in your `.bashrc` as well if you want :) but that's not relevant to this repo.
 
+## Themeing
+
+I use `vesper.nvim` as my theme, similar to the VSCode themes [Vesper](https://marketplace.visualstudio.com/items?itemName=raunofreiberg.vesper) or [Vesper++](https://marketplace.visualstudio.com/items?itemName=Obstinate.vesper-pp). I also have `catpuccin` and `everforest` files in my config but they are commented out - you can toggle them to see which is best. 
+
+I like having transparency, and the themes `catpuccin` and `vesper.nvim` have good support for it. If you don't care, you can remove the `vim.api` calls to change transparency in the `lua/[some_theme].lua` file and also in `vim-options.lua`
+
+In the photo displaying the theme, my termial is transparent - you can do this by going to your terminal settings and changing the transparency/opacity. I use Iterm2, but this also works just fine with the default terminal on MacOS.
+
 ## Lazy.nvim 
 
-To use lazy.nvim, just type `:Lazy` to ensure that everything's good to go.
+To use lazy.nvim, just type `:Lazy` to ensure that everything's good to go. Learn more about lazy and how to use it [here](https://www.lazyvim.org/)!
 
 ## File Tree Management
 
