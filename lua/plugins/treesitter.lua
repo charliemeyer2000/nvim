@@ -1,6 +1,12 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    version = false,
     build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        "windwp/nvim-ts-autotag",
+    },
     config = function()
         local configs = require("nvim-treesitter.configs")
 
@@ -65,8 +71,4 @@ return {
             },
         })
     end,
-    dependencies = {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        "windwp/nvim-ts-autotag", -- JSX auto tag close/rename
-    },
 }
