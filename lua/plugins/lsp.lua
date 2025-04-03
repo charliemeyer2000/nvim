@@ -12,8 +12,7 @@ return {
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
-    priority = 1000, -- Super high priority to load first
-    lazy = false,  -- Load during startup, not lazy
+    lazy = true,
     config = function()
       -- Ensure executable permissions
       local mason_bin = vim.fn.expand("~/.local/share/nvim/mason/bin")
@@ -328,4 +327,3 @@ return {
     end,
   },
 }
-
