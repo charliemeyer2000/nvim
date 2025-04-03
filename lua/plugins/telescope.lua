@@ -1,9 +1,21 @@
 return {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = { 
+        'nvim-lua/plenary.nvim',
+        {
+            'nvim-telescope/telescope-fzf-native.nvim',
+            build = 'make',
+            cond = function()
+                return vim.fn.executable 'make' == 1
+            end,
+        },
+    },
     config = function()
         local builtin = require('telescope.builtin')
         local telescope = require('telescope')
+
+        -- Load fzf extension
+        telescope.load_extension('fzf')
 
         -- Configure telescope to respect gitignore
         telescope.setup({
