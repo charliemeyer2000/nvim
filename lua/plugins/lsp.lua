@@ -188,10 +188,10 @@ return {
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<CR>"] = cmp.mapping({
             i = function(fallback)
-              if cmp.visible() then
+              if cmp.visible() and cmp.get_active_entry() then
                 cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
               else
-                fallback() -- If no completion menu is visible, just do a regular <CR>
+                fallback() -- If no completion menu is visible or no active entry, just do a regular <CR>
               end
             end,
             s = cmp.mapping.confirm({ select = true }),
