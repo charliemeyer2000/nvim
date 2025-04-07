@@ -311,7 +311,7 @@ return {
         },
         lightbulb = {
           enable = true,
-          sign = true,
+          sign = false,
           virtual_text = true,
         },
       })

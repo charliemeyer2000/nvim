@@ -42,7 +42,7 @@ return {
                 },
                 live_grep = {
                     additional_args = function()
-                        return { "--hidden", "--no-ignore-vcs" }
+                        return { "--hidden" }
                     end,
                 },
             },
