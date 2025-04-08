@@ -184,13 +184,16 @@ local function is_hidden_file(name, bufnr)
   local relpath = get_relative_path(full_path, git_root)
   
   -- Check gitignore patterns first
-  if file_matches_gitignore(relpath) then
+  if file_matches_gitignore(relpath) and name ~= '.gitignore' then
     return true
   end
 
   local status = get_git_status(dir)
-  -- For dotfiles, show them only if they're tracked
+  -- For dotfiles, show them only if they're tracked, but always show .gitignore
   if vim.startswith(name, '.') and name ~= '..' then
+    if name == '.gitignore' then
+      return false
+    end
     return not status.tracked[name]
   end
 
