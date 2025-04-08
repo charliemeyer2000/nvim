@@ -40,3 +40,9 @@ global.mapleader = " "
 
 -- jj to exit insert mode
 vim.keymap.set("i", "jj", "<Esc>", { noremap = true })
+
+-- Window navigation with Ctrl + hjkl
+vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, desc = "Move to left window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, desc = "Move to bottom window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, desc = "Move to top window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, desc = "Move to right window" })
