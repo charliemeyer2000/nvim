@@ -26,6 +26,15 @@ o.splitright = true
 o.splitbelow = true         -- When on, splitting a window will put the new window below the current one
 o.termguicolors = true
 
+-- Make diagnostic messages wrap
+vim.diagnostic.config({
+  float = {
+    width = 80,
+    max_width = 80,
+    wrap = true,
+  }
+})
+
 -- Leader Key
 global.mapleader = " "
 

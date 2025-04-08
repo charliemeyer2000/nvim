@@ -174,31 +174,36 @@ local function is_hidden_file(name, bufnr)
     return false
   end
 
-  local git_root = get_git_root()
-  if not git_root then
+  -- Always show non-dot files that exist on disk, regardless of git status
+  if not vim.startswith(name, '.') and name ~= '..' then
+    -- Check if it matches gitignore patterns only if we're in a git repo
+    local git_root = get_git_root()
+    if git_root then
+      -- Get the full path and make it relative to git root
+      local full_path = vim.fn.fnamemodify(dir .. "/" .. name, ":p")
+      local relpath = get_relative_path(full_path, git_root)
+      
+      -- Only hide files that match gitignore patterns
+      return file_matches_gitignore(relpath)
+    end
+    return false  -- Not in a git repo, show all non-dot files
+  end
+  
+  -- For dotfiles (starting with .), hide by default unless it's .gitignore
+  if name == '.gitignore' then
     return false
   end
-
-  -- Get the full path and make it relative to git root
-  local full_path = vim.fn.fnamemodify(dir .. "/" .. name, ":p")
-  local relpath = get_relative_path(full_path, git_root)
   
-  -- Check gitignore patterns first
-  if file_matches_gitignore(relpath) and name ~= '.gitignore' then
-    return true
-  end
-
-  local status = get_git_status(dir)
-  -- For dotfiles, show them only if they're tracked, but always show .gitignore
-  if vim.startswith(name, '.') and name ~= '..' then
-    if name == '.gitignore' then
-      return false
-    end
+  -- If we're in a git repo, check if the dotfile is tracked
+  local git_root = get_git_root()
+  if git_root then
+    local status = get_git_status(dir)
+    -- Show dotfiles that are tracked by git
     return not status.tracked[name]
   end
-
-  -- For non-dotfiles, hide if they're ignored by Git
-  return status.ignored[name] == true
+  
+  -- In non-git repos, hide all dotfiles
+  return true
 end
 
 local function toggle_show_all()
